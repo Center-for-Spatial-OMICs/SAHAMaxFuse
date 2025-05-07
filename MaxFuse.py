@@ -16,7 +16,7 @@ import sys
 
 tissue = sys.argv[1]
 print(tissue)
-obs_column = 'leiden_1'
+obs_column = 'leiden_3'
 
 # CODE TIME!!
 adata_PR = ad.read_h5ad(f'PRT_{tissue}.h5ad')
@@ -30,7 +30,7 @@ sc.pp.scale(adata_RNA)
 print(adata_RNA)
 print(adata_PR)
 
-labels_rna = adata_RNA.obs['Insitutype_Broad'].to_numpy()
+labels_rna = adata_RNA.obs['Insitutype_Labelled'].to_numpy()
 labels_codex = adata_PR.obs[obs_column].to_numpy()
 
 print(labels_rna)
